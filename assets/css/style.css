@@ -26,7 +26,12 @@ body {
 
 .logo {
     padding: 10px;
-    margin-left: 500px;
+    margin-left: 25%;
+    margin-right: 25%;
+}
+
+.hero {
+    padding-top: 10px;
 }
 
 .hero-p {
@@ -34,6 +39,7 @@ body {
     color: var(--dark);
     font-weight: lighter;
     font-size: 30px;
+    text-align: center;
 }
 
 .callout {
