@@ -1,32 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./assets/css/style.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css" integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I=" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Staatliches&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assests/css/foundation.min.css">
+    <link rel="stylesheet" href="./assests/css/style.css">
     <title>Food and Fun</title>
 </head>
+
 <body>
+    <div class="grid-container">
 
-    <header class="hero">
-        <h1> Food and Fun! </h1>
-        <p> Search for events in your city and find great food to go with it! </p>
-    </header>
+        <header class="grid-x grid-padding-x">
+            <div class="large-12 cell">
+                <img src="./assests/images/logo.png" alt="Food and Fun logo" class="logo">
+                <p class="hero-p"> Search for events in your city and find great food to go with it! </p>
+            </div>
+        </header>
 
-    <main class="grid-x">
-        <div class="mainFood cell small-6">
-            <h3>Food info goes here</h3>
+        <div class="grid-x grid-padding-x">
+            <div class="large-12 cell">
+                <div class="callout form-search">
+                    <h3 class="card-header text-uppercase">Search By City: </h3>
+                    <form id="city-form" class="card-body">
+                        <label class="form-label" for="city"></label>
+                        <input name="cityname" id="cityname" type="text" autofocus="true" class="form-input" />
+                        <a href="#" class="button"><img src="./assests/images/search.png" alt="search"></a>
+                    </form>
+                </div>
+            </div>
         </div>
 
-        <div class="mainEvent cell small-6">
-            <h3>Events info goes here</h3>
+        <div class="grid-x grid-padding-x">
+            <div class="large-6 medium-6 cell">
+                <div class="callout">
+                    <h5><img src="./assests/images/beer-can.png" alt="Beers">Food Info Goes Here!</h5>
+                    <div class="mainFood">
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nisi consectetur eveniet magnam sed
+                            sit
+                            esse cum doloremque accusantium hic optio laborum eum accusamus id ullam quae, dolores nulla
+                            aliquam
+                            expedita.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="large-6 medium-6 cell">
+                <div class="callout">
+                    <h5><img src="./assests/images/calendar.png" alt="Events">Events Info Goes Here!</h5>
+                    <div class="mainEvent">
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nisi consectetur eveniet magnam sed
+                            sit
+                            esse cum doloremque accusantium hic optio laborum eum accusamus id ullam quae, dolores nulla
+                            aliquam
+                            expedita.</p>
+                    </div>
+                </div>
+            </div>
         </div>
 
-        
-    </main>
+        <div class="grid-x grid-padding-x">
+            <div class="large-12 cell">
+                <div class="callout form-email">
+                    <h5>We can email you the event and food results!</h5>
+                    <p>Enter your email address and we'll send you the event and food results from this search.</p>
+                    <label class="form-label" for="email"></label>
+                    <input name="emailname" id="emailname" type="text" autofocus="true" class="form-input" />
+                    <a href="" class="small button"><img src="./assests/images/send.png" alt="send"></a>
+                </div>
+            </div>
+        </div>
 
-    
+    </div>
     <script src="./assets/js/script.js"></script>
 </body>
+
 </html>
