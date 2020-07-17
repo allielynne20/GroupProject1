@@ -15,7 +15,7 @@
 
         <header class="grid-x grid-padding-x">
             <div class="large-12 cell hero">
-                <img src="./assets/images/logo.png" alt="Food and Fun logo" class="logo">
+                <img class="logo" src="./assets/images/logo.png" alt="Food and Fun logo" class="logo">
                 <p class="hero-p"> Search for events in your city and find great food to go with it! </p>
             </div>
         </header>
@@ -26,9 +26,9 @@
                     <h3 class="card-header text-uppercase">Search By City: </h3>
                     <form id="city-form" class="card-body">
                         <label class="form-label" for="city"></label>
-                        <input name="cityname" id="cityname" type="text" autofocus="true" class="form-input" value="" />
-                        <button class="button" id="searchBtn" type="button"> <img src="./assets/images/search.png"
-                                alt="search"></button>
+
+                        <input name="cityname" id="cityname" type="text" placeholder="ex. Orlando" autofocus="true" class="form-input" value=""/>
+                        <button class="button" id="searchBtn" type="button"> <img src="./assets/images/search.png" alt="search"></button>
                     </form>
                 </div>
             </div>
@@ -39,6 +39,7 @@
                 <div class="callout" id="callout1">
                     <h5><img src="./assets/images/beer-can.png" alt="Beers"> Food and Brews!</h5>
                     <!-- <div class="mainFood">
+
                         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nisi consectetur eveniet magnam sed
                             sit
                             esse cum doloremque accusantium hic optio laborum eum accusamus id ullam quae, dolores nulla
@@ -52,6 +53,7 @@
                 <div class="callout" id="callout2">
                     <h5><img src="./assets/images/calendar.png" alt="Events"> Events In Your City!</h5>
                     <!-- <div class="mainEvent">
+
                         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nisi consectetur eveniet magnam sed
                             sit
                             esse cum doloremque accusantium hic optio laborum eum accusamus id ullam quae, dolores nulla
@@ -68,7 +70,7 @@
                     <h5>We can email you the event and food results!</h5>
                     <p>Enter your email address and we'll send you the event and food results from this search.</p>
                     <label class="form-label" for="email"></label>
-                    <input name="emailname" id="emailname" type="text" autofocus="true" class="form-input" />
+                    <input name="emailname" id="emailname" type="text" placeholder="ex. johndoe@gmail.com" autofocus="true" class="form-input" />
                     <button class="small button"><img src="./assets/images/send.png" alt="send"></button>
                 </div>
             </div>
