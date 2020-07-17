@@ -39,9 +39,11 @@ body {
 .hero-p {
     font-family: 'Staatliches', cursive;
     color: var(--dark);
+    /* -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black; */
     font-weight: lighter;
     font-size: 30px;
-    text-align: center;
+    text-align: left;
 }
 
 .callout {
