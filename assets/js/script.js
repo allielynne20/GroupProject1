@@ -58,6 +58,7 @@ function saveCityEvent(cityName) {
             eventList.append(eventURL);
             eventEl.append(eventList);
             $("#callout2").append(eventEl);
+            console.log(response)
         },
         // error: function (xhr, status, err) {
         //     // This time, we do not end up here!
