@@ -30,12 +30,12 @@ function Brew(data) {
     callout1.innerHTML = "";
     for (var i = 0; i < 10; i++) {
         console.log(i);
-        
+
         if (i < 10) {
             var brewEl = $('<div>').addClass("mainFood");
             var brewName = $('<p>').addClass("foodlist").text(data[i].name);
-            var brewStreet = $('<p>').addClass("foodstreet").text((data[i].street) +", " + (data[i].city));
-            var brewSite = $('<p>').addClass("foodsite").text(data[i].website_url);
+            var brewStreet = $('<p>').addClass("foodstreet").text((data[i].street) + "   " + (data[i].city) + "   " + (data[i].postal_code));
+            var brewSite = $('<a>').addClass("foodsite").attr('href', data[i].website_url).text(data[i].website_url);
             //alter to make it a hyperlink
             var brewPhone = $('<p>').addClass("foodphone tel").text(data[i].phone);
             //alter to make it in correct format
@@ -65,6 +65,7 @@ function saveCityEvent(cityName) {
 
 // Format event info and add to page
 function eventsToPage(data) {
+    callout2.innerHTML = "";
     for (var i = 0; i < data._embedded.events.length; i++) {
         console.log(i);
         if (i < 10) {
