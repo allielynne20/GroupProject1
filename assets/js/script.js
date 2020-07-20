@@ -1,7 +1,7 @@
 var searchEl = document.querySelector("#searchBtn");
 var cityName = document.getElementById("cityname");
 
-$("#searchBtn").on("click", function() {
+$("#searchBtn").on("click", function () {
     event.preventDefault();
     var cityName = $("#cityname").val();
     console.log(cityName);
@@ -24,7 +24,7 @@ function saveCityBrew(cityName) {
 
 function Brew(data) {
     console.log(data)
-    for(var i=0; i < data.length; i++) {
+    for (var i = 0; i < data.length; i++) {
         console.log(i);
         if (i < 10) {
             var brewEl = $('<div>').addClass("mainFood");
@@ -35,36 +35,39 @@ function Brew(data) {
     }
 }
 
-
+// Fetch EventApi information
 function saveCityEvent(cityName) {
+    eventApi = 'https://app.ticketmaster.com/discovery/v2/events.json?city=' + cityName + '&size=10&apikey=iXIL7zyvzVd6feevOuPN5Kj5OiJTxxwp'
 
-    // var cityName = document.getElementById("cityname").value;
+    fetch(eventApi)
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (data) {
+            console.log(data);
+            eventsToPage(data);
+        });
+};
 
-    var events = 'https://app.ticketmaster.com/discovery/v2/events.json?city=' + cityName + '&size=1&apikey=iXIL7zyvzVd6feevOuPN5Kj5OiJTxxwp';
-
-    $.ajax({
-        type: "GET",
-        url: events,
-        async: true,
-        dataType: "json",
-        success: function (response) {
-            console.log(response);
-            console.log(response._embedded.events[0].url);
-            // Parse the response.
+// Format event info and add to page
+function eventsToPage(data) {
+    for (var i = 0; i < data._embedded.events.length; i++) {
+        console.log(i);
+        if (i < 10) {
             var eventEl = $('<div>').addClass("mainEvent");
-            var eventList = $('<p>').addClass("eventlist").text(response._embedded.events[0].name);
-            var eventURL = $('<a>').addClass("eventURL").attr('href', response._embedded.events[0].url).text(response._embedded.events[0].url);
-            // Do other things.
-            eventList.append(eventURL);
-            eventEl.append(eventList);
-            $("#callout2").append(eventEl);
-            console.log(response)
-        },
-        // error: function (xhr, status, err) {
-        //     // This time, we do not end up here!
-        // }
-    });
-}
+            var eventList = $('<p>').addClass("eventlist").text(data._embedded.events[i].name);
+            var eventDate = $('<p>').addClass("eventdate").text(data._embedded.events[i].dates.start.localDate);
 
-// searchEl.addEventListener("click", saveCityBrew)
-// searchEl.addEventListener("click", saveCityEvent)
+            //add ticket info buttons
+            ticketButtonId = ("ticketButton" + [i]);
+            var ticketInfo = $('<button>').addClass("button").text("Buy Tickets").attr("onclick", "window.location.href='" + (data._embedded.events[i].url) + "';");
+
+
+            // Append elements to eventEl
+            eventEl.append(eventList);
+            eventEl.append(eventDate);
+            eventEl.append(ticketInfo);
+            $("#callout2").append(eventEl);
+        };
+    };
+};
