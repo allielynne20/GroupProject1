@@ -1,13 +1,16 @@
 var searchEl = document.querySelector("#searchBtn");
 var cityName = document.getElementById("cityname");
+var callout1 = document.getElementById("callout1")
 
 $("#searchBtn").on("click", function () {
     event.preventDefault();
     var cityName = $("#cityname").val();
     console.log(cityName);
-    // cityName.value = "";
+
     saveCityBrew(cityName);
     saveCityEvent(cityName);
+
+    cityName.value = "";
 })
 
 
@@ -24,12 +27,23 @@ function saveCityBrew(cityName) {
 
 function Brew(data) {
     console.log(data)
-    for (var i = 0; i < data.length; i++) {
+    callout1.innerHTML = "";
+    for (var i = 0; i < 10; i++) {
         console.log(i);
+        
         if (i < 10) {
             var brewEl = $('<div>').addClass("mainFood");
-            var brewList = $('<p>').addClass("foodlist").text(data[i].name);
-            brewEl.append(brewList);
+            var brewName = $('<p>').addClass("foodlist").text(data[i].name);
+            var brewStreet = $('<p>').addClass("foodstreet").text((data[i].street) +", " + (data[i].city));
+            var brewSite = $('<p>').addClass("foodsite").text(data[i].website_url);
+            //alter to make it a hyperlink
+            var brewPhone = $('<p>').addClass("foodphone tel").text(data[i].phone);
+            //alter to make it in correct format
+
+            brewEl.append(brewName);
+            brewEl.append(brewStreet);
+            brewEl.append(brewPhone);
+            brewEl.append(brewSite);
             $("#callout1").append(brewEl);
         }
     }
@@ -56,12 +70,13 @@ function eventsToPage(data) {
         if (i < 10) {
             var eventEl = $('<div>').addClass("mainEvent");
             var eventList = $('<p>').addClass("eventlist").text(data._embedded.events[i].name);
-            var eventDate = $('<p>').addClass("eventdate").text(data._embedded.events[i].dates.start.localDate);
+            var eventDate = $('<p>').addClass("eventdate").text('Event Date: ' + data._embedded.events[i].dates.start.localDate);
+            var ticketImg = $('<img>').addClass('ticketicon').attr('src', './assets/images/ticketicon.png');
 
             //add ticket info buttons
             ticketButtonId = ("ticketButton" + [i]);
-            var ticketInfo = $('<button>').addClass("button").text("Buy Tickets").attr("onclick", "window.location.href='" + (data._embedded.events[i].url) + "';");
-
+            var ticketInfo = $('<button>').addClass("eventbutton").attr("onclick", "window.location.href='" + (data._embedded.events[i].url) + "';");
+            ticketInfo.append(ticketImg)
 
             // Append elements to eventEl
             eventEl.append(eventList);
