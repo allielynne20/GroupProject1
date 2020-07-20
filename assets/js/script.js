@@ -65,6 +65,7 @@ function saveCityEvent(cityName) {
 
 // Format event info and add to page
 function eventsToPage(data) {
+    callout2.innerHTML = "";
     for (var i = 0; i < data._embedded.events.length; i++) {
         console.log(i);
         if (i < 10) {
