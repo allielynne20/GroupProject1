@@ -103,6 +103,22 @@ h5 {
 .eventlist, .foodlist {
     font-family: 'Staatliches', cursive;
     font-weight: lighter;
-    font-size: 20px;
+    font-size: 22px;
     border-bottom: 1.25px solid var(--dark);
+}
+.eventlist, .foodphone {
+    font-family: 'Staatliches', cursive;
+    font-weight: lighter;
+    font-size: 18px;
+    
+}
+.eventlist, .foodsite {
+    font-family: 'Staatliches', cursive;
+    font-weight: lighter;
+    font-size: 18px;
+}
+.eventlist, .foodstreet {
+    font-family: 'Staatliches', cursive;
+    font-weight: lighter;
+    font-size: 18px;
 }

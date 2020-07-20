@@ -1,11 +1,12 @@
 var searchEl = document.querySelector("#searchBtn");
 var cityName = document.getElementById("cityname");
+var callout1 = document.getElementById("callout1")
 
 $("#searchBtn").on("click", function () {
     event.preventDefault();
     var cityName = $("#cityname").val();
     console.log(cityName);
-    
+
     saveCityBrew(cityName);
     saveCityEvent(cityName);
 
@@ -26,12 +27,23 @@ function saveCityBrew(cityName) {
 
 function Brew(data) {
     console.log(data)
-    for (var i = 0; i < data.length; i++) {
+    callout1.innerHTML = "";
+    for (var i = 0; i < 10; i++) {
         console.log(i);
+        
         if (i < 10) {
             var brewEl = $('<div>').addClass("mainFood");
-            var brewList = $('<p>').addClass("foodlist").text(data[i].name);
-            brewEl.append(brewList);
+            var brewName = $('<p>').addClass("foodlist").text(data[i].name);
+            var brewStreet = $('<p>').addClass("foodstreet").text((data[i].street) +", " + (data[i].city));
+            var brewSite = $('<p>').addClass("foodsite").text(data[i].website_url);
+            //alter to make it a hyperlink
+            var brewPhone = $('<p>').addClass("foodphone tel").text(data[i].phone);
+            //alter to make it in correct format
+
+            brewEl.append(brewName);
+            brewEl.append(brewStreet);
+            brewEl.append(brewPhone);
+            brewEl.append(brewSite);
             $("#callout1").append(brewEl);
         }
     }
