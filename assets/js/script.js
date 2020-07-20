@@ -5,9 +5,11 @@ $("#searchBtn").on("click", function () {
     event.preventDefault();
     var cityName = $("#cityname").val();
     console.log(cityName);
-    // cityName.value = "";
+    
     saveCityBrew(cityName);
     saveCityEvent(cityName);
+
+    cityName.value = "";
 })
 
 
@@ -56,12 +58,13 @@ function eventsToPage(data) {
         if (i < 10) {
             var eventEl = $('<div>').addClass("mainEvent");
             var eventList = $('<p>').addClass("eventlist").text(data._embedded.events[i].name);
-            var eventDate = $('<p>').addClass("eventdate").text(data._embedded.events[i].dates.start.localDate);
+            var eventDate = $('<p>').addClass("eventdate").text('Event Date: ' + data._embedded.events[i].dates.start.localDate);
+            var ticketImg = $('<img>').addClass('ticketicon').attr('src', './assets/images/ticketicon.png');
 
             //add ticket info buttons
             ticketButtonId = ("ticketButton" + [i]);
-            var ticketInfo = $('<button>').addClass("button").text("Buy Tickets").attr("onclick", "window.location.href='" + (data._embedded.events[i].url) + "';");
-
+            var ticketInfo = $('<button>').addClass("eventbutton").attr("onclick", "window.location.href='" + (data._embedded.events[i].url) + "';");
+            ticketInfo.append(ticketImg)
 
             // Append elements to eventEl
             eventEl.append(eventList);
