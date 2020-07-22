@@ -6,7 +6,7 @@ $("#searchBtn").on("click", function () {
     event.preventDefault();
     var cityName = $("#cityname").val();
     console.log(cityName);
-
+    localStorage.setItem('name', cityName);
     saveCityBrew(cityName);
     saveCityEvent(cityName);
 
@@ -20,8 +20,6 @@ function saveCityBrew(cityName) {
         'https://api.openbrewerydb.org/breweries?by_city=' + cityName)
         .then(res => res.json())
         .then(function (data) {
-            //locally store data for future email form
-            localStorage.setItem('brewresults', data.length);
             Brew(data);
         });
 }
@@ -65,8 +63,6 @@ function saveCityEvent(cityName) {
         })
         .then(function (data) {
             console.log(data);
-            //locally store data for future email form 
-            localStorage.setItem('eventresults', data.length);
             eventsToPage(data);
         });
 };
