@@ -36,7 +36,7 @@ function Brew(data) {
         if (i < 10) {
             var brewEl = $('<div>').addClass("mainFood");
             var brewName = $('<p>').addClass("foodlist").text(data[i].name);
-            var brewStreet = $('<p>').addClass("foodstreet").text((data[i].street) + "   " + (data[i].city) + "   " + (data[i].postal_code));
+            var brewStreet = $('<p>').addClass("foodstreet").text((data[i].street) + ", " + (data[i].city));
             var brewSite = $('<a>').addClass("foodsite").attr('href', data[i].website_url).text(data[i].website_url);
             //alter to make it a hyperlink
             var brewPhone = $('<p>').addClass("foodphone tel").text(data[i].phone);
