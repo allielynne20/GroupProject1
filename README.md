@@ -10,4 +10,20 @@ Food 'n Fun is a cutting edge application in which a user can search for an even
 
 ## Technologies Used
 
-We utilized two Apis, Ticketmaster and Open Brewery DB.
+This application utilizes two main API's to function, Ticketmaster and Brewery DB.
+We used the following languages:
+
+* HTML
+* JavaScript
+* CSS
+* jQuery
+* Foundation
+* Google Fonts
+
+## Screenshot of Application
+
+![Screenshot of Food 'n Fun Application](assets/images/screenshot.png)
+
+## Have Some Food 'n Fun Today!
+
+<a href="https://allielynne20.github.io/GroupProject1/" target="_blank">https://allielynne20.github.io/GroupProject1/</a>
