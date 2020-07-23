@@ -22,7 +22,7 @@ We used the following languages:
 
 ## Screenshot of Application
 
-![Screenshot of Food 'n Fun Application](assets/images/screen.jpg)
+![Screenshot of Food 'n Fun Application](assets/images/screen.JPG)
 
 ## Have Some Food 'n Fun Today!
 
